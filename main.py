@@ -53,6 +53,7 @@ def login():
 
         for user in users_db:
             if form_login == user.login and form_password == user.password:
+                session['user_email'] = user.login
                 return redirect('/index')
         else:
             error = 'Login atau password salah'
